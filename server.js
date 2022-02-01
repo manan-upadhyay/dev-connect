@@ -1,6 +1,10 @@
 import express from "express";
+import connectDB from "./config/db.js";
 
 const app = express();
+
+// Connect Database
+connectDB();
 
 app.use("/", (req, res) => res.send("hello"));
 
