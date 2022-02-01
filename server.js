@@ -1,4 +1,6 @@
 import express from "express";
+import dotenv from "dotenv";
+
 import connectDB from "./config/db.js";
 import userRoute from "./routes/api/users.js";
 import authRoute from "./routes/api/auth.js";
@@ -7,8 +9,13 @@ import postRoute from "./routes/api/post.js";
 
 const app = express();
 
+dotenv.config();
+
 // Connect Database
 connectDB();
+
+// Init Middleware Body Parser
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => res.send("hello"));
 
