@@ -11,6 +11,11 @@ const router = express.Router();
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
+
+    if (!user) {
+      return res.status(400).json({ msg: "Invalid User" });
+    }
+
     res.send(user);
   } catch (error) {
     console.error(error.message);
