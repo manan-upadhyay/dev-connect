@@ -60,7 +60,7 @@ router.post(
           id: user.id,
         },
       };
-      console.log(process.env.JWT_SECRET);
+
       jwt.sign(
         payload,
         process.env.JWT_SECRET,
