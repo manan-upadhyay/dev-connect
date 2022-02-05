@@ -4,13 +4,13 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-dark">
       <h1>
-        <a href="index.html">
+        <Link to="/">
           <i className="fas fa-code"></i> DevConnector
-        </a>
+        </Link>
       </h1>
       <ul>
         <li>
-          <Link to="profiles.html">Developers</Link>
+          <Link to="/profiles">Developers</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>
